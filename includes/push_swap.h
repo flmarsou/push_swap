@@ -17,8 +17,13 @@
 # include <stdlib.h>	// malloc(), free(), exit()
 # include <stdio.h>		// printf()
 
+// Parser
+void	error_message(int error);
+void	single_arg(char *str);
+void	multiple_args(char **arr);
 
-
+// Utils
 int		ft_isdigit(int c);
+int		count_words(char *str, int target);
 
 #endif
