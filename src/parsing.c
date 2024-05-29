@@ -12,57 +12,49 @@
 
 #include "../includes/push_swap.h"
 
-static void	error_message(int error)
+void	error_message(int error)
 {
 	if (error == 1)
-		write(1, "\033[1;31mError:\033[0m No Input\n", 27);
-	if (error == 2)
-		write(1, "\033[1;31mError:\033[0m Invalid Arguments\n", 36);
-	if (error == 3)
-		write(1, "\033[1;31mError:\033[0m Not Enough Arguments\n", 39);
-	if (error == 4)
-		write(1, "\033[1;31mError:\033[0m Int Overflow\n", 31);
+		write(1, "Error: No Input\n", 16);
+	else if (error == 2)
+		write(1, "Error: Not Enough Arguments\n", 28);
+	else if (error == 3)
+		write(1, "Error: Invalid Input\n", 21);
 	exit(0);
 }
 
-static int	is_number(char *str)
+void	single_arg(char *str)
 {
 	unsigned int	i;
 
 	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
+	if (count_words(str, ' ') == 1)
+		error_message(2);
 	while (str[i])
 	{
+		while (str[i] == ' ')
+			i++;
 		if (!ft_isdigit(str[i]))
-			return (0);
+			error_message(3);
 		i++;
 	}
-	return (1);
 }
 
-static void	error_checker(int argc, char *argv[])
+void	multiple_args(char **arr)
 {
+	unsigned int	arg;
 	unsigned int	i;
 
-	i = 1;
-	if (argc <= 1)
-		error_message(1);
-	if (argc == 2)
+	arg = 1;
+	while (arr[arg])
 	{
-		if ()
+		i = 0;
+		while (arr[arg][i])
+		{
+			if (!ft_isdigit(arr[arg][i]))
+				error_message(3);
+			i++;
+		}
+		arg++;
 	}
-	while (i < argc)
-	{
-		if (!is_number(argv[i]))
-			error_message(2);
-		i++;
-	}
-	printf("\033[1;32mCorrect Arguments!\033[0m\n");
-}
-
-int	main(int argc, char *argv[])
-{
-	error_checker(argc, argv);
-	return (0);
 }
