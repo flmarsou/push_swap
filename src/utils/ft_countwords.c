@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countword.c                                     :+:      :+:    :+:   */
+/*   ft_countwords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 10:25:33 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/05/30 13:00:14 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/04 11:24:14 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/04 11:29:52 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ft_countword(const char *str, char target)
+int	ft_countwords(const char *str, char target)
 {
 	unsigned int	i;
 	unsigned int	count;

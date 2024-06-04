@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   isduplicate.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 10:22:00 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/05/30 10:38:55 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/04 15:31:03 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/04 15:43:03 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ft_isdigit(int c)
+int	isduplicate(const char **arr)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	unsigned int	i;
+	unsigned int	j;
+	
+	i = 0;
+	while (arr[i])
+	{
+		j = i + 1;
+		while (arr[j])
+		{
+			if (!ft_strcmp(arr[i], arr[j]))
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }

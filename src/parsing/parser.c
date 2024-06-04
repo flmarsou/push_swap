@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 15:38:23 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/04 15:41:47 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/04 09:50:25 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/04 15:50:21 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ft_strcmp(const char *str1, const char *str2)
+void	parser(int argc, const char **argv)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (str1[i] || str2[i])
+	if (argc == 1)
+		error_message(2);
+	while (argv[i])
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		if (!isnumber(argv[i]))
+			error_message(3);
+		if (!isduplicate(argv))
+			error_message(4);
 		i++;
 	}
-	return (0);
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   error_message.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 10:19:04 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/05/30 13:07:32 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/04 10:42:59 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/04 15:44:51 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	error_message(int error)
 {
@@ -25,61 +25,4 @@ void	error_message(int error)
 	if (error == 5)
 		write(1, "\e[1;31mError:\e[1;97m Int Overflow\n", 34);
 	exit(0);
-}
-
-static void	duplicates(const char *arr[])
-{
-	unsigned int	i;
-	unsigned int	j;
-
-	i = 0;
-	while (arr[i])
-	{
-		j = i + 1;
-		while (arr[j])
-		{
-			if (!ft_strcmp(arr[i], arr[j]))
-				error_message(4);
-			j++;
-		}
-		i++;
-	}
-}
-
-void	single_arg(const char *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		while (str[i] == ' ')
-			i++;
-		if (!ft_isdigit(str[i]))
-			error_message(3);
-		i++;
-	}
-	if (ft_countword(str, ' ') == 1)
-		error_message(2);
-	duplicates(ft_split(str, ' '));
-}
-
-void	multiple_args(const char *arr[])
-{
-	unsigned int	arg;
-	unsigned int	i;
-
-	arg = 1;
-	while (arr[arg])
-	{
-		i = 0;
-		while (arr[arg][i])
-		{
-			if (!ft_isdigit(arr[arg][i]))
-				error_message(3);
-			i++;
-		}
-		arg++;
-	}
-	duplicates(arr);
 }

@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   isnumber.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 15:38:23 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/04 15:41:47 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/04 12:15:38 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/04 15:37:49 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ft_strcmp(const char *str1, const char *str2)
+static int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
+int	isnumber(const char *str)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (str1[i] || str2[i])
+	if (str[i] == '-')
+		i++;
+	while (str[i])
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		if (!ft_isdigit(str[i]))
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }

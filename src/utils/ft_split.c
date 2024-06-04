@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 12:53:06 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/05/30 13:00:34 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/04 11:30:25 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/04 15:27:02 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static char	*grab_words(const char *str, char target, int reset)
 {
-	static int	i = 0;
-	int			j;
-	char		*word;
+	static int		i = 0;
+	unsigned int	j;
+	char			*word;
 
 	j = 0;
 	if (!reset)
@@ -25,7 +25,7 @@ static char	*grab_words(const char *str, char target, int reset)
 			i++;
 		while (str[i + j] && str[i + j] != target)
 			j++;
-		word = malloc(sizeof(char) * (j + 1));
+		word = (char *)malloc(sizeof(char) * (j + 1));
 		j = 0;
 		while (str[i] && str[i] != target)
 		{
@@ -42,13 +42,13 @@ static char	*grab_words(const char *str, char target, int reset)
 
 const char	**ft_split(const char *str, char target)
 {
-	int			i;
-	int			count;
-	const char	**ret;
+	unsigned int	i;
+	unsigned int	count;
+	const char		**ret;
 
 	i = 0;
-	count = ft_countword(str, target);
-	ret = malloc(sizeof(char *) * (count + 1));
+	count = ft_countwords(str, target);
+	ret = (const char **)malloc(sizeof(char *) * (count + 1));
 	if (ret == NULL)
 		return (NULL);
 	while (count > 0)
