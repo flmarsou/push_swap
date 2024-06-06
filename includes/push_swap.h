@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:22:14 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/05 13:47:47 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/06 11:14:37 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 # include <unistd.h>	// write()
 # include <stdlib.h>	// malloc(), free(), exit()
+
+// Stack
+typedef struct s_list
+{
+	int				value;
+	int				index;
+	struct s_list	*next;
+}					t_list;
 
 // Parsing
 void		parser(int argc, const char **argv);
