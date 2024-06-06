@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:31:03 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/04 15:43:03 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/05 13:27:28 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	isduplicate(const char **arr)
 {
 	unsigned int	i;
 	unsigned int	j;
-	
+
 	i = 0;
 	while (arr[i])
 	{

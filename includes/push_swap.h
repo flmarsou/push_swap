@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:22:14 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/04 16:15:14 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/05 13:47:47 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 // Parsing
 void		parser(int argc, const char **argv);
-void		error_message(int error);
 
 int			isnumber(const char *str);
 int			isoverflow(const char *str);
