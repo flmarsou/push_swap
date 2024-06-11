@@ -9,7 +9,7 @@ Run `make re` to recompile everything.
 2. Run `./push_swap <args>` to execute the program.
 
 ### Rules for `<args>`:
-- Needs more than one argument/number.
+- Needs more than one argument.
 - Can only contain integers.
 - Can't have duplicates.
 - Needs to be between -2147483648 and 2147483647.
