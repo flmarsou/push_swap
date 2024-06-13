@@ -43,4 +43,12 @@ Run `make re` to recompile everything.
 
 - [x] [`sa`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/sa.c) `Swap A` -> Swap the first 2 elements at the top of Stack A.
 - [x] [`sb`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/sb.c) `Swap B` -> Swap the first 2 elements at the top of Stack B.
-- [x] [`ss`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/ss.c) -> `sa` and `sb` at the same time.
+- [x] [`ss`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/ss.c)‎ -> `sa` and `sb` at the same time.
+- [x] [`pa`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/pa.c) `Push A` -> Push the first element at the top of Stack B, and put it at the top of Stack A.
+- [x] [`pb`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/pb.c) `Push B` -> Push the first element at the top of Stack A, and put it at the top of Stack B.
+- [x] [`ra`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/ra.c) `Rotate A` -> Shift up all elements of Stack A by 1 (the first element becomes the last one).
+- [x] [`rb`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/rb.c) `Rotate B` -> Shift up all elements of Stack B by 1 (the first element becomes the last one).
+- [x] [`rr`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/rr.c) -> `ra` and `rb` at the same time.
+- [x] [`rra`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/rra.c) `Reverse Rotate A` -> Shift down all elements of Stack A by 1 (the last element becomes the first one).
+- [x] [`rrb`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/rrb.c) `Reverse Rotate B` -> Shift down all elements of Stack B by 1 (the last element becomes the first one).
+- [x] [`rrr`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/rrr.c) -> `rra` and `rrb` at the same time.
