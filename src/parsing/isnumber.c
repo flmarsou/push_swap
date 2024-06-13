@@ -6,20 +6,20 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:15:38 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/04 15:37:49 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/12 09:01:44 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static int	ft_isdigit(int c)
+static bool	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+		return (true);
+	return (false);
 }
 
-int	isnumber(const char *str)
+bool	isnumber(const char *str)
 {
 	unsigned int	i;
 
@@ -29,8 +29,8 @@ int	isnumber(const char *str)
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
-			return (0);
+			return (false);
 		i++;
 	}
-	return (1);
+	return (true);
 }

@@ -6,13 +6,13 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:13:21 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/06 09:36:44 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/12 09:01:51 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	isoverflow(const char *str)
+bool	isoverflow(const char *str)
 {
 	int		i;
 	int		is_negative;
@@ -34,6 +34,6 @@ int	isoverflow(const char *str)
 	if (is_negative)
 		result = -result;
 	if (result < -2147483648 || result > 2147483647)
-		return (0);
-	return (1);
+		return (false);
+	return (true);
 }

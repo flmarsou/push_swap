@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isduplicate.c                                      :+:      :+:    :+:   */
+/*   free_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 15:31:03 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/12 11:35:05 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/13 08:30:28 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/13 10:13:43 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-bool	isduplicate(const char **arr)
+void	free_list(t_list *stack)
 {
-	unsigned int	i;
-	unsigned int	j;
+	t_list	*temp;
 
-	i = 0;
-	while (arr[i])
+	while (stack)
 	{
-		j = i + 1;
-		while (arr[j])
-		{
-			if (!ft_strcmp(arr[i], arr[j]))
-				return (false);
-			j++;
-		}
-		i++;
+		temp = stack;
+		stack = stack->next;
+		free(temp);
 	}
-	return (true);
 }
