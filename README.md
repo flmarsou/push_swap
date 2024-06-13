@@ -31,8 +31,8 @@ Run `make re` to recompile everything.
 
 - [x] [`parser`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/parser.c) - Goes through all the arguments to see if everything can be processed further. Displays an error message and exits the program otherwise.
 - [x] [`isnumber`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/isnumber.c) - Boolean that checks if args only has numbers.
-- [x] [`isduplicate`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/isduplicate.c) - Boolean that checks if any arg appears twice.
 - [x] [`isoverflow`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/isoverflow.c) - Boolean that checks for any overflow.
+- [x] [`isduplicate`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/isduplicate.c) - Boolean that checks if any arg appears twice.
 
 ## 2. Stacks
 
@@ -52,3 +52,10 @@ Run `make re` to recompile everything.
 - [x] [`rra`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/rra.c) `Reverse Rotate A` -> Shift down all elements of Stack A by 1 (the last element becomes the first one).
 - [x] [`rrb`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/rrb.c) `Reverse Rotate B` -> Shift down all elements of Stack B by 1 (the last element becomes the first one).
 - [x] [`rrr`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/rrr.c) -> `rra` and `rrb` at the same time.
+
+## X. Utils
+- [x] [`ft_countwords`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_countwords.c) - Counts the number of words in a string.
+- [x] [`ft_split`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_split.c) - Seperates a string into an array of strings.
+- [x] [`ft_strcmp`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_strcmp.c) - Checks for a difference between two strings.
+- [x] [`ft_atoi`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_atoi.c) - Converts a string into an integer.
+- [x] [`ft_lstnew`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_lstnew.c) - Creates and allocates a new list.
