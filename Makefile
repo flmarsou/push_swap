@@ -6,7 +6,7 @@
 #    By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 09:24:46 by flmarsou          #+#    #+#              #
-#    Updated: 2024/06/13 10:16:17 by flmarsou         ###   ########.fr        #
+#    Updated: 2024/06/14 08:21:57 by flmarsou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 EXE = push_swap
 
 # Files
-SRC =			./src/push_swap.c
+SRC =			./src/push_swap.c \
 
 SRC_PARSING =	./src/parsing/parser.c \
 				./src/parsing/isnumber.c \
@@ -25,11 +25,12 @@ SRC_UTILS =		./src/utils/ft_countwords.c \
 				./src/utils/ft_split.c \
 				./src/utils/ft_strcmp.c \
 				./src/utils/ft_atoi.c \
-				./src/utils/ft_lstnew.c
+				./src/utils/ft_lstnew.c \
+				./src/utils/ft_lstlast.c \
 
 SRC_LISTS =		./src/lists/init_list.c \
-				./src/lists/free_list.c \
-				./src/lists/moves/pa.c \
+
+SRC_MOVES =		./src/lists/moves/pa.c \
 				./src/lists/moves/pb.c \
 				./src/lists/moves/ra.c \
 				./src/lists/moves/rb.c \
@@ -41,8 +42,7 @@ SRC_LISTS =		./src/lists/init_list.c \
 				./src/lists/moves/sb.c \
 				./src/lists/moves/ss.c \
 
-
-SOURCES =		${SRC} ${SRC_PARSING} ${SRC_UTILS} ${SRC_LISTS}
+SOURCES =		${SRC} ${SRC_PARSING} ${SRC_UTILS} ${SRC_LISTS} ${SRC_MOVES}
 OBJECTS =		${SOURCES:.c=.o}
 
 # Variables

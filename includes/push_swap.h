@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:22:14 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/13 14:00:26 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/14 16:15:24 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 typedef struct s_list
 {
 	int				value;
-	int				index;
 	struct s_list	*next;
 }					t_list;
 
@@ -40,11 +39,17 @@ int			ft_strcmp(const char *str1, const char *str2);
 int			ft_atoi(const char *str);
 
 t_list		*ft_lstnew(int value);
+t_list		*ft_lstlast(t_list *lst);
 
 // Lists
 t_list		*init_list(int argc, const char **argv);
-void		free_list(t_list *stack);
 
 // Moves
+void		sa(t_list *stack_a);
+void		sb(t_list *stack_b);
+void		ss(t_list *stack_a, t_list *stack_b);
+void		ra(t_list **stack_a);
+void		rb(t_list **stack_b);
+void		rr(t_list **stack_a, t_list **stack_b);
 
 #endif
