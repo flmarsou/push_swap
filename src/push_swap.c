@@ -12,19 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-static void	print_list(t_list *stack)
-{
-	t_list	*current;
-
-	current = stack;
-	while (current)
-	{
-		printf("%d\n", current->value);
-		current = current->next;
-	}
-	printf("═════════════\n   Stack A   \n");
-}
-
 int	main(int argc, const char **argv)
 {
 	t_list	*stack_a;
@@ -39,8 +26,5 @@ int	main(int argc, const char **argv)
 		parser(argc - 1, argv + 1);
 		stack_a = init_list(argc - 1, argv + 1);
 	}
-
-	print_list(stack_a);
 	exit(0);
-	return (0);
 }
