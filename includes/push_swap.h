@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:22:14 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/14 16:15:24 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/17 12:06:17 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,16 @@ t_list		*ft_lstlast(t_list *lst);
 t_list		*init_list(int argc, const char **argv);
 
 // Moves
-void		sa(t_list *stack_a);
-void		sb(t_list *stack_b);
-void		ss(t_list *stack_a, t_list *stack_b);
+void		pa(t_list **stack_a, t_list **stack_b);
+void		pb(t_list **stack_b, t_list **stack_a);
 void		ra(t_list **stack_a);
 void		rb(t_list **stack_b);
 void		rr(t_list **stack_a, t_list **stack_b);
+void		rra(t_list **stack_a);
+void		rrb(t_list **stack_b);
+void		rrr(t_list **stack_a, t_list **stack_b);
+void		sa(t_list *stack_a);
+void		sb(t_list *stack_b);
+void		ss(t_list *stack_a, t_list *stack_b);
 
 #endif

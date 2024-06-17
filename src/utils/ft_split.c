@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:30:25 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/13 09:27:27 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/17 12:53:53 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ const char	**ft_split(const char *str, char target)
 	i = 0;
 	count = ft_countwords(str, target);
 	ret = (const char **)malloc(sizeof(char *) * (count + 1));
-	if (ret == NULL)
+	if (!ret)
 		return (NULL);
 	while (count > 0)
 	{
