@@ -31,7 +31,8 @@ Run `make re` to recompile everything.
 | Turn in files | Makefile, *.h, *.c |
 | Makefile | NAME, all, clean, fclean, re |
 | External functs. | read, write, malloc, free, exit, [`ft_printf`](https://github.com/flmarsou/2.1-ft_printf) |
-| Description | Sorts a pile of numbers |
+| Libft authorized | Yes |
+| Description | Write a program that sorts a pile of numbers |
 
 # 📑 List of Functions
 
