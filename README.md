@@ -23,7 +23,15 @@ Run `make re` to recompile everything.
 1. Run `make clean` to remove every object files.
 2. Run `make fclean` to remove every object files, including the executable.
 
----
+# ✨ Summary
+
+|     |     |
+| --- | --- |
+| Program name | push_swap |
+| Turn in files | Makefile, *.h, *.c |
+| Makefile | NAME, all, clean, fclean, re |
+| External functs. | read, write, malloc, free, exit, [`ft_printf`](https://github.com/flmarsou/2.1-ft_printf) |
+| Description | Sorts a pile of numbers |
 
 # 📑 List of Functions
 
