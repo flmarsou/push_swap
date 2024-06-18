@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:22:14 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/17 12:06:17 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/18 15:46:22 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ t_list		*ft_lstlast(t_list *lst);
 
 // Lists
 t_list		*init_list(int argc, const char **argv);
+bool		issorted(t_list **stack_a);
+void		free_list(t_list **stack);
 
 // Moves
 void		pa(t_list **stack_a, t_list **stack_b);

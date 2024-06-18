@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   issorted.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 14:29:43 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/18 10:15:18 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/18 14:47:15 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/18 15:00:41 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	sa(t_list *stack_a)
+bool	issorted(t_list **stack_a)
 {
-	t_list	*swap;
-	int		temp;
+	t_list	*current;
 
-	swap = stack_a->next;
-	temp = stack_a->value;
-	stack_a->value = swap->value;
-	swap->value = temp;
-	write(1, "sa\n", 3);
+	current = *stack_a;
+	while (current->next)
+	{
+		if (current->value > current->next->value)
+			return (false);
+		current = current->next;
+	}
+	return (true);
 }

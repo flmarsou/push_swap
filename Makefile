@@ -6,7 +6,7 @@
 #    By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 09:24:46 by flmarsou          #+#    #+#              #
-#    Updated: 2024/06/17 13:58:12 by flmarsou         ###   ########.fr        #
+#    Updated: 2024/06/18 15:36:50 by flmarsou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ SRC_UTILS =		./src/utils/ft_countwords.c \
 				./src/utils/ft_lstlast.c \
 
 SRC_LISTS =		./src/lists/init_list.c \
+				./src/lists/issorted.c \
+				./src/lists/free_list.c \
 
 SRC_MOVES =		./src/lists/moves/pa.c \
 				./src/lists/moves/pb.c \
@@ -61,7 +63,7 @@ GREEN		= \e[0;1;32m
 _GREEN		= \e[1;4;32m
 
 FILE_COUNT	= 0
-FILE_TOTAL	= 23
+FILE_TOTAL	= 25
 BAR_SIZE	= ${shell expr 100 \* ${FILE_COUNT} / ${FILE_TOTAL}}
 BAR_LOAD	= ${shell expr 23 \* ${FILE_COUNT} / ${FILE_TOTAL}}
 BAR_REST	= ${shell expr 23 - ${BAR_LOAD}}

@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:50:25 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/14 16:30:01 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/18 10:03:56 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	parser(int argc, const char **argv)
 	unsigned int	i;
 
 	i = 0;
-	if (argc < 1)
+	if (argc == 0)
 		error_message(1);
 	if (argc == 1)
 		exit(0);
