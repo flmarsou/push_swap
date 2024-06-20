@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:22:14 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/18 15:46:22 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:58:45 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,31 @@ int			ft_atoi(const char *str);
 
 t_list		*ft_lstnew(int value);
 t_list		*ft_lstlast(t_list *lst);
+int			ft_lstsize(t_list *lst);
+void		ft_lstfree(t_list *stack);
 
 // Lists
 t_list		*init_list(int argc, const char **argv);
-bool		issorted(t_list **stack_a);
-void		free_list(t_list **stack);
 
 // Moves
-void		pa(t_list **stack_a, t_list **stack_b);
-void		pb(t_list **stack_b, t_list **stack_a);
-void		ra(t_list **stack_a);
-void		rb(t_list **stack_b);
-void		rr(t_list **stack_a, t_list **stack_b);
-void		rra(t_list **stack_a);
-void		rrb(t_list **stack_b);
-void		rrr(t_list **stack_a, t_list **stack_b);
+void		pa(t_list *stack_a, t_list *stack_b);
+void		pb(t_list *stack_b, t_list *stack_a);
+void		ra(t_list *stack_a);
+void		rb(t_list *stack_b);
+void		rr(t_list *stack_a, t_list *stack_b);
+void		rra(t_list *stack_a);
+void		rrb(t_list *stack_b);
+void		rrr(t_list *stack_a, t_list *stack_b);
 void		sa(t_list *stack_a);
 void		sb(t_list *stack_b);
 void		ss(t_list *stack_a, t_list *stack_b);
+
+// Sorting
+void		sorter(t_list *stack_a, t_list *stack_b);
+void		sorted(t_list *stack_a);
+
+void		sort_two(t_list *stack_a);
+void		sort_three(t_list *stack_a);
+void		sort_five(t_list *stack_a, t_list *stack_b);
 
 #endif

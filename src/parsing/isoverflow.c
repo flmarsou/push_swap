@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:13:21 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/12 09:01:51 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/20 08:35:51 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 bool	isoverflow(const char *str)
 {
-	int		i;
-	int		is_negative;
-	long	result;
+	unsigned int	i;
+	bool			is_negative;
+	long			result;
 
 	i = 0;
 	is_negative = 0;

@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:50:25 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/18 10:03:56 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/20 16:00:48 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ void	parser(int argc, const char **argv)
 	i = 0;
 	if (argc == 0)
 		error_message(1);
-	if (argc == 1)
-		exit(0);
 	while (argv[i])
 	{
 		if (!isnumber(argv[i]))
@@ -41,6 +39,11 @@ void	parser(int argc, const char **argv)
 		if (!isoverflow(argv[i]))
 			error_message(3);
 		i++;
+	}
+	if (argc == 1)
+	{
+		write(1, "\e[1;32mOK\n", 10);
+		exit(0);
 	}
 	if (!isduplicate(argv))
 		error_message(4);

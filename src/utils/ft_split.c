@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:30:25 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/17 12:53:53 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/20 09:58:02 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	*grab_words(const char *str, char target, int reset)
 {
-	static int		i = 0;
+	static int		i;
 	unsigned int	j;
 	char			*word;
 

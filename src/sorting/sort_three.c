@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   issorted.c                                         :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/18 14:47:15 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/18 15:00:41 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/20 09:05:21 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/20 14:53:17 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-bool	issorted(t_list **stack_a)
+void	sort_three(t_list *stack_a)
 {
-	t_list	*current;
-
-	current = *stack_a;
-	while (current->next)
+	sorted(stack_a);
+	if (stack_a->value < stack_a->next->value)
 	{
-		if (current->value > current->next->value)
-			return (false);
-		current = current->next;
+		rra(stack_a);
+		sorted(stack_a);
+		sa(stack_a);
 	}
-	return (true);
+	else
+	{
+		if (stack_a->value < stack_a->next->next->value)
+			sa(stack_a);
+		else if (stack_a->next->value < stack_a->next->next->value)
+			ra(stack_a);
+		else
+		{
+			sa(stack_a);
+			rra(stack_a);
+		}
+	}
+	sorted(stack_a);
 }

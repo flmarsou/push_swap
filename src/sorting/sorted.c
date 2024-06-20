@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ra.c                                               :+:      :+:    :+:   */
+/*   sorted.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 15:43:04 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/17 12:16:41 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/20 08:47:58 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/20 12:59:27 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	ra(t_list **stack_a)
+void	sorted(t_list *stack_a)
 {
-	t_list	*last;
-
-	last = ft_lstlast(*stack_a);
-	last->next = *stack_a;
-	*stack_a = (*stack_a)->next;
-	last->next->next = NULL;
-	write(1, "ra\n", 3);
+	t_list	*temp;
+	
+	temp = stack_a;
+	while (temp->next)
+	{
+		if (temp->value > temp->next->value)
+			return ;
+		temp = temp->next;
+	}
+	write(1, "\e[1;32mOK\n", 10);
+	exit(0);
 }

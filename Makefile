@@ -6,7 +6,7 @@
 #    By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 09:24:46 by flmarsou          #+#    #+#              #
-#    Updated: 2024/06/18 15:36:50 by flmarsou         ###   ########.fr        #
+#    Updated: 2024/06/20 15:58:16 by flmarsou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,10 @@ SRC_UTILS =		./src/utils/ft_countwords.c \
 				./src/utils/ft_atoi.c \
 				./src/utils/ft_lstnew.c \
 				./src/utils/ft_lstlast.c \
+				./src/utils/ft_lstsize.c \
+				./src/utils/ft_lstfree.c \
 
 SRC_LISTS =		./src/lists/init_list.c \
-				./src/lists/issorted.c \
-				./src/lists/free_list.c \
 
 SRC_MOVES =		./src/lists/moves/pa.c \
 				./src/lists/moves/pb.c \
@@ -44,7 +44,13 @@ SRC_MOVES =		./src/lists/moves/pa.c \
 				./src/lists/moves/sb.c \
 				./src/lists/moves/ss.c \
 
-SOURCES =		${SRC} ${SRC_PARSING} ${SRC_UTILS} ${SRC_LISTS} ${SRC_MOVES}
+SRC_SORTING =	./src/sorting/sorter.c \
+				./src/sorting/sorted.c \
+				./src/sorting/sort_two.c \
+				./src/sorting/sort_three.c \
+				./src/sorting/sort_five.c \
+
+SOURCES =		${SRC} ${SRC_PARSING} ${SRC_UTILS} ${SRC_LISTS} ${SRC_MOVES} ${SRC_SORTING}
 OBJECTS =		${SOURCES:.c=.o}
 
 # Variables
@@ -63,7 +69,7 @@ GREEN		= \e[0;1;32m
 _GREEN		= \e[1;4;32m
 
 FILE_COUNT	= 0
-FILE_TOTAL	= 25
+FILE_TOTAL	= 30
 BAR_SIZE	= ${shell expr 100 \* ${FILE_COUNT} / ${FILE_TOTAL}}
 BAR_LOAD	= ${shell expr 23 \* ${FILE_COUNT} / ${FILE_TOTAL}}
 BAR_REST	= ${shell expr 23 - ${BAR_LOAD}}
