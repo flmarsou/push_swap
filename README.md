@@ -68,7 +68,7 @@ Run `make re` to recompile everything.
 - [x] [`sorted`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sorted.c) - Checks if the Stack A is sorted.
 - [x] [`sort_two`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sort_two.c) - Sorts two numbers: `1 move`
 - [x] [`sort_three`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sort_three.c) - Sorts three numbers: `1~2 moves`
-- [x] [`sort_five`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sort_five.c) - Sorts four/five numbers: `4~6 moves`
+- [x] [`sort_five`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sort_five.c) - Sorts four/five numbers: `4~9 moves`
 
 ## X. Utils
 - [x] [`ft_countwords`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_countwords.c) - Counts the number of words in a string.
