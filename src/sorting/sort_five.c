@@ -78,7 +78,7 @@ static bool	is_sorted(t_list *stack_a)
 	return (true);
 }
 
-void	sort_stack_a(t_list **stack_a)
+static void	sort_stack_a(t_list **stack_a)
 {
 	if ((*stack_a)->value < (*stack_a)->next->value)
 	{
