@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:22:14 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/20 14:58:45 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:51:49 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,30 @@
 # include <stdio.h>		// printf()
 # include <stdbool.h>	// Booleans
 
-// Stack
 typedef struct s_list
 {
 	int				value;
 	struct s_list	*next;
 }					t_list;
 
-// Parsing
+/* ************************************************************************** */
+/*                                                                            */
+/*                                  PARSING                                   */
+/*                                                                            */
+/* ************************************************************************** */
+
 void		parser(int argc, const char **argv);
 
 bool		isnumber(const char *str);
 bool		isoverflow(const char *str);
 bool		isduplicate(const char **arr);
 
-// Utils
+/* ************************************************************************** */
+/*                                                                            */
+/*                                   UTILS                                    */
+/*                                                                            */
+/* ************************************************************************** */
+
 int			ft_countwords(const char *str, char target);
 const char	**ft_split(const char *str, char target);
 int			ft_strcmp(const char *str1, const char *str2);
@@ -43,28 +52,112 @@ t_list		*ft_lstlast(t_list *lst);
 int			ft_lstsize(t_list *lst);
 void		ft_lstfree(t_list *stack);
 
-// Lists
+/* ************************************************************************** */
+/*                                                                            */
+/*                                   LISTS                                    */
+/*                                                                            */
+/* ************************************************************************** */
+
 t_list		*init_list(int argc, const char **argv);
 
-// Moves
-void		pa(t_list *stack_a, t_list *stack_b);
-void		pb(t_list *stack_b, t_list *stack_a);
-void		ra(t_list *stack_a);
-void		rb(t_list *stack_b);
-void		rr(t_list *stack_a, t_list *stack_b);
-void		rra(t_list *stack_a);
-void		rrb(t_list *stack_b);
-void		rrr(t_list *stack_a, t_list *stack_b);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                   MOVES                                    */
+/*                                                                            */
+/* ************************************************************************** */
+
+/**
+ * Push the first element at the top of Stack A, 
+ * and put it at the top of Stack B.
+*/
+void		pa(t_list **stack_a, t_list **stack_b);
+
+/**
+ * Push the first element at the top of Stack B, 
+ * and put it at the top of Stack A.
+*/
+void		pb(t_list **stack_a, t_list **stack_b);
+
+/**
+ * Shift up all elements of Stack A by 1 (first becomes last).
+ * `1 2 3 4 5` -> `2 3 4 5 1`
+*/
+void		ra(t_list **stack_a);
+
+/**
+ * Shift up all elements of Stack B by 1 (first becomes last).
+ * `1 2 3 4 5` -> `2 3 4 5 1`
+*/
+void		rb(t_list **stack_b);
+
+/**
+ * `ra` and `rb` at the same time.
+*/
+void		rr(t_list **stack_a, t_list **stack_b);
+
+/**
+ * Shift down all elements of Stack A by 1 (last becomes first).
+ * `1 2 3 4 5` -> `5 1 2 3 4`
+*/
+void		rra(t_list **stack_a);
+
+/**
+ * Shift down all elements of Stack B by 1 (last becomes first).
+ * `1 2 3 4 5` -> `5 1 2 3 4`
+*/
+void		rrb(t_list **stack_b);
+
+/**
+ * `rra` and `rrb` at the same time.
+*/
+void		rrr(t_list **stack_a, t_list **stack_b);
+
+/**
+ * Swap the first 2 elements at the top of Stack A.
+ * `1 2 3 4 5` -> `2 1 3 4 5`
+*/
 void		sa(t_list *stack_a);
+
+/**
+ * Swap the first 2 elements at the top of Stack B.
+ * `1 2 3 4 5` -> `2 1 3 4 5`
+*/
 void		sb(t_list *stack_b);
+
+/**
+ * `sa` and `sb` at the same time.
+*/
 void		ss(t_list *stack_a, t_list *stack_b);
 
-// Sorting
-void		sorter(t_list *stack_a, t_list *stack_b);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                  SORTING                                   */
+/*                                                                            */
+/* ************************************************************************** */
+
+/**
+ * Checks how many numbers to sort, calling the correct algorithm.
+*/
+void		sorter(t_list **stack_a, t_list **stack_b);
+
+/**
+ * Function that checks if the `stack_a` is sorted, exit the program if so.
+*/
 void		sorted(t_list *stack_a);
 
+/**
+ * Sort two numbers: `1 move`
+*/
 void		sort_two(t_list *stack_a);
-void		sort_three(t_list *stack_a);
-void		sort_five(t_list *stack_a, t_list *stack_b);
+
+/**
+ * Sort three numbers: `1~2 moves`
+*/
+void		sort_three(t_list **stack_a);
+
+/**
+ * Sort four or five numbers: ``
+*/
+void		sort_five(t_list **stack_a, t_list **stack_b);
 
 #endif

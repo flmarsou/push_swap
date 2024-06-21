@@ -6,32 +6,31 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:05:21 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/20 14:53:17 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:07:48 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sort_three(t_list *stack_a)
+void	sort_three(t_list **stack_a)
 {
-	sorted(stack_a);
-	if (stack_a->value < stack_a->next->value)
+	if ((*stack_a)->value < (*stack_a)->next->value)
 	{
 		rra(stack_a);
-		sorted(stack_a);
-		sa(stack_a);
+		sorted(*stack_a);
+		sa(*stack_a);
 	}
 	else
 	{
-		if (stack_a->value < stack_a->next->next->value)
-			sa(stack_a);
-		else if (stack_a->next->value < stack_a->next->next->value)
+		if ((*stack_a)->value < (*stack_a)->next->next->value)
+			sa(*stack_a);
+		else if ((*stack_a)->next->value < (*stack_a)->next->next->value)
 			ra(stack_a);
 		else
 		{
-			sa(stack_a);
+			sa(*stack_a);
 			rra(stack_a);
 		}
 	}
-	sorted(stack_a);
+	sorted(*stack_a);
 }
