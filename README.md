@@ -36,6 +36,8 @@ Run `make re` to recompile everything.
 
 # 📑 List of Functions
 
+- [x] [`push_swap`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/push_swap.c) - Main file.
+
 ## 1. Parsing
 
 - [x] [`parser`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/parser.c) - Goes through all the arguments to see if everything can be processed further. Displays an error message and exits the program otherwise.
@@ -46,7 +48,6 @@ Run `make re` to recompile everything.
 ## 2. Stacks
 
 - [x] [`init_stack`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/init_list.c) - Initializes a linked list named "Stack A", which stores every input.
-- [x] [`free_stack`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/init_list.c) - Frees a given linked list at the end of the program.
 
 ## 3. Moves
 
@@ -62,9 +63,19 @@ Run `make re` to recompile everything.
 - [x] [`rrb`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/rrb.c) `Reverse Rotate B` -> Shift down all elements of Stack B by 1 (the last element becomes the first one).
 - [x] [`rrr`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/moves/rrr.c) -> `rra` and `rrb` at the same time.
 
+## 4. Sorting
+- [x] [`sorter`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sorter.c) - Parses how many numbers to sort, using the fitting algorithm.
+- [x] [`sorted`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sorted.c) - Checks if the Stack A is sorted.
+- [x] [`sort_two`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sort_two.c) - Sorts two numbers: `1 move`
+- [x] [`sort_three`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sort_three.c) - Sorts three numbers: `1~2 moves`
+- [x] [`sort_five`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sort_five.c) - Sorts four/five numbers: `4~6 moves`
+
 ## X. Utils
 - [x] [`ft_countwords`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_countwords.c) - Counts the number of words in a string.
 - [x] [`ft_split`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_split.c) - Seperates a string into an array of strings.
 - [x] [`ft_strcmp`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_strcmp.c) - Checks for a difference between two strings.
 - [x] [`ft_atoi`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_atoi.c) - Converts a string into an integer.
 - [x] [`ft_lstnew`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_lstnew.c) - Creates and allocates a new list.
+- [x] [`ft_lstlast`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_lstlast.c) - Returns the last element of a list.
+- [x] [`ft_lstsize`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_lstnew.c) - Returns the size of a list.
+- [x] [`ft_lstfree`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_lstfree.c) - Frees a list and its elements.
