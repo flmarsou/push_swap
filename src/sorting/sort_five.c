@@ -83,7 +83,6 @@ void	sort_stack_a(t_list **stack_a)
 	if ((*stack_a)->value < (*stack_a)->next->value)
 	{
 		rra(stack_a);
-		is_sorted(*stack_a);
 		sa(*stack_a);
 	}
 	else
@@ -98,7 +97,6 @@ void	sort_stack_a(t_list **stack_a)
 			rra(stack_a);
 		}
 	}
-	is_sorted(*stack_a);
 }
 
 void	sort_five(t_list **stack_a, t_list **stack_b)
@@ -106,14 +104,16 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 	if (ft_lstsize(*stack_a) == 4)
 	{
 		min_to_stack_b(stack_a, stack_b);
-		sort_stack_a(stack_a);
+		if (!is_sorted(*stack_a))
+			sort_stack_a(stack_a);
 		pa(stack_a, stack_b);
 	}
 	else
 	{
 		min_to_stack_b(stack_a, stack_b);
 		min_to_stack_b(stack_a, stack_b);
-		sort_stack_a(stack_a);
+		if (!is_sorted(*stack_a))
+			sort_stack_a(stack_a);
 		pa(stack_a, stack_b);
 		pa(stack_a, stack_b);
 	}
