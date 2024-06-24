@@ -23,6 +23,6 @@ void	sorted(t_list *stack_a)
 			return ;
 		temp = temp->next;
 	}
-	write(1, "\e[1;32mOK\n", 10);
+	write(1, "\e[1;32mOK\n\e[0m", 14);
 	exit(0);
 }

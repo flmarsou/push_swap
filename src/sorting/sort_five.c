@@ -14,26 +14,21 @@
 
 static int	min_value(t_list *stack_a)
 {
-	t_list	*current;
 	int		temp;
 	int		index;
-	int		ret;
 
-	current = stack_a;
-	temp = current->value;
+	temp = stack_a->value;
 	index = 1;
-	ret = 1;
-	while (current)
+	while (stack_a)
 	{
-		if (current->value < temp)
+		if (stack_a->value < temp)
 		{
-			temp = current->value;
-			ret = index;
+			temp = stack_a->value;
+			index++;
 		}
-		current = current->next;
-		index++;
+		stack_a = stack_a->next;
 	}
-	return (ret);
+	return (index);
 }
 
 static void	min_to_stack_b(t_list **stack_a, t_list **stack_b)
@@ -66,14 +61,11 @@ static void	min_to_stack_b(t_list **stack_a, t_list **stack_b)
 
 static bool	is_sorted(t_list *stack_a)
 {
-	t_list	*temp;
-
-	temp = stack_a;
-	while (temp->next)
+	while (stack_a->next)
 	{
-		if (temp->value > temp->next->value)
+		if (stack_a->value > stack_a->next->value)
 			return (false);
-		temp = temp->next;
+		stack_a = stack_a->next;
 	}
 	return (true);
 }

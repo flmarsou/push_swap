@@ -12,16 +12,31 @@
 
 #include "../../includes/push_swap.h"
 
-void	init_sort(t_list **stack_a)
+static t_list	*min_value(t_list *stack_a)
 {
-	int	i;
-	int	j;
-	
-	i = 0;
-	j = 0;
-	while (i < (*stack_a)->value)
+	t_list	*min;
+
+	min = NULL;
+	while (stack_a)
 	{
-		/* code */
+		if (stack_a->index == -1 && (!min || stack_a->value < min->value))
+			min = stack_a;
+		stack_a = stack_a->next;
 	}
-	
+	return (min);
+}
+
+void	init_sort(t_list *stack_a)
+{
+	int		index;
+	t_list	*min_node;
+
+	index = 1;
+	min_node = min_value(stack_a);
+	while (min_node)
+	{
+		min_node->index = index;
+		index++;
+		min_node = min_value(stack_a);
+	}
 }

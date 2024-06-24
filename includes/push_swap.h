@@ -105,9 +105,14 @@ void		ft_lstfree(t_list *stack);
 /* ************************************************************************** */
 
 /**
- * Initializes a linked list named "Stack A", which stores every input.
+ * Initializes a linked list named "Stack A", and stores every inputs.
 */
 t_list		*init_list(int argc, const char **argv);
+
+/**
+ * Pre-sorts the values and add indexes from lowest to highest.
+ */
+void		init_sort(t_list *stack_a);
 
 /* ************************************************************************** */
 /*                                                                            */

@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int value)
 	if (!new)
 		exit(1);
 	new->value = value;
+	new->index = -1;
 	new->next = NULL;
 	return (new);
 }

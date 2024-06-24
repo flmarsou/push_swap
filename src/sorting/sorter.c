@@ -24,5 +24,9 @@ void	sorter(t_list **stack_a, t_list **stack_b)
 		sort_three(stack_a);
 	else if (size == 4 || size == 5)
 		sort_five(stack_a, stack_b);
+	else
+	{
+		init_sort(*stack_a);
+	}
 	sorted(*stack_a);
 }

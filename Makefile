@@ -31,6 +31,7 @@ SRC_UTILS =		./src/utils/ft_countwords.c \
 				./src/utils/ft_lstfree.c \
 
 SRC_LISTS =		./src/lists/init_list.c \
+				./src/lists/init_sort.c \
 
 SRC_MOVES =		./src/lists/moves/pa.c \
 				./src/lists/moves/pb.c \

@@ -15,13 +15,13 @@
 static void	error_message(int error)
 {
 	if (error == 1)
-		write(1, "\e[1;31mError:\e[1;97m No Input\n", 30);
+		write(1, "\e[1;31mError:\e[1;97m No Input\n\e[0m", 35);
 	if (error == 2)
-		write(1, "\e[1;31mError:\e[1;97m Invalid Input\n", 35);
+		write(1, "\e[1;31mError:\e[1;97m Invalid Input\n\e[0m", 40);
 	if (error == 3)
-		write(1, "\e[1;31mError:\e[1;97m Int Overflow\n", 34);
+		write(1, "\e[1;31mError:\e[1;97m Int Overflow\n\e[0m", 39);
 	if (error == 4)
-		write(1, "\e[1;31mError:\e[1;97m Duplicates Found\n", 38);
+		write(1, "\e[1;31mError:\e[1;97m Duplicates Found\n\e[0m", 43);
 	exit(1);
 }
 
