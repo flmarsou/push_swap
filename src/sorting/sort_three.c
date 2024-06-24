@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:05:21 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/21 15:07:48 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:10:13 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,4 @@ void	sort_three(t_list **stack_a)
 			rra(stack_a);
 		}
 	}
-	sorted(*stack_a);
 }

@@ -18,7 +18,7 @@ static int	min_value(t_list *stack_a)
 	int		temp;
 	int		index;
 	int		ret;
-	
+
 	current = stack_a;
 	temp = current->value;
 	index = 1;
@@ -51,13 +51,13 @@ static void	min_to_stack_b(t_list **stack_a, t_list **stack_b)
 		ra(stack_a);
 		pb(stack_b, stack_a);
 	}
-	else if (min_value(*stack_a) == 4)
+	else if (min_value(*stack_a) == (ft_lstsize(*stack_a) - 1))
 	{
 		rra(stack_a);
 		rra(stack_a);
 		pb(stack_b, stack_a);
 	}
-	else
+	else if (min_value(*stack_a) == ft_lstsize(*stack_a))
 	{
 		rra(stack_a);
 		pb(stack_b, stack_a);
@@ -83,6 +83,8 @@ static void	sort_stack_a(t_list **stack_a)
 	if ((*stack_a)->value < (*stack_a)->next->value)
 	{
 		rra(stack_a);
+		if (is_sorted(*stack_a))
+			return ;
 		sa(*stack_a);
 	}
 	else
@@ -117,5 +119,4 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 		pa(stack_a, stack_b);
 		pa(stack_a, stack_b);
 	}
-	sorted(*stack_a);
 }

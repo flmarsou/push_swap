@@ -6,7 +6,7 @@
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:22:14 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/21 15:51:49 by flmarsou         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:16:38 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_list
 {
 	int				value;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
@@ -30,10 +31,25 @@ typedef struct s_list
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * Goes through all the arguments to see if everything can be processed further.
+ * Displays an error message and exits the program otherwise.
+*/
 void		parser(int argc, const char **argv);
 
+/**
+ * Boolean that checks if args only has numbers.
+*/
 bool		isnumber(const char *str);
+
+/**
+ * Boolean that checks for any overflow.
+*/
 bool		isoverflow(const char *str);
+
+/**
+ * Boolean that checks if any arg appears twice.
+*/
 bool		isduplicate(const char **arr);
 
 /* ************************************************************************** */
@@ -42,14 +58,44 @@ bool		isduplicate(const char **arr);
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * Counts the number of words in a string.
+*/
 int			ft_countwords(const char *str, char target);
+
+/**
+ * Seperates a string into an array of strings.
+*/
 const char	**ft_split(const char *str, char target);
+
+/**
+ * Checks for a difference between two strings.
+*/
 int			ft_strcmp(const char *str1, const char *str2);
+
+/**
+ * Converts a string into an integer.
+*/
 int			ft_atoi(const char *str);
 
+/**
+ * Creates and allocates a new list.
+*/
 t_list		*ft_lstnew(int value);
+
+/**
+ * Returns the last element of a list.
+*/
 t_list		*ft_lstlast(t_list *lst);
+
+/**
+ * Returns the size of a list.
+*/
 int			ft_lstsize(t_list *lst);
+
+/**
+ * Frees a list and its elements.
+*/
 void		ft_lstfree(t_list *stack);
 
 /* ************************************************************************** */
@@ -58,6 +104,9 @@ void		ft_lstfree(t_list *stack);
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * Initializes a linked list named "Stack A", which stores every input.
+*/
 t_list		*init_list(int argc, const char **argv);
 
 /* ************************************************************************** */

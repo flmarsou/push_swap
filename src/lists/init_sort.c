@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorter.c                                           :+:      :+:    :+:   */
+/*   init_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/20 08:45:56 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/24 14:10:22 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/24 13:49:14 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/24 15:03:32 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sorter(t_list **stack_a, t_list **stack_b)
+void	init_sort(t_list **stack_a)
 {
-	unsigned int	size;
-
-	size = ft_lstsize(*stack_a);
-	sorted(*stack_a);
-	if (size == 2)
-		sort_two(*stack_a);
-	else if (size == 3)
-		sort_three(stack_a);
-	else if (size == 4 || size == 5)
-		sort_five(stack_a, stack_b);
-	sorted(*stack_a);
+	int	i;
+	int	j;
+	
+	i = 0;
+	j = 0;
+	while (i < (*stack_a)->value)
+	{
+		/* code */
+	}
+	
 }
