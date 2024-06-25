@@ -36,18 +36,17 @@ Run `make re` to recompile everything.
 
 # 📑 List of Functions
 
-- [x] [`push_swap`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/push_swap.c) - Main file.
-
 ## 1. Parsing
 
 - [x] [`parser`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/parser.c) - Goes through all the arguments to see if everything can be processed further. Displays an error message and exits the program otherwise.
-- [x] [`isnumber`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/isnumber.c) - Boolean that checks if args only has numbers.
+- [x] [`isnumber`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/isnumber.c) - Boolean that checks if args only has correct numbers.
 - [x] [`isoverflow`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/isoverflow.c) - Boolean that checks for any overflow.
 - [x] [`isduplicate`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/isduplicate.c) - Boolean that checks if any arg appears twice.
 
 ## 2. Stacks
 
-- [x] [`init_stack`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/init_list.c) - Initializes a linked list named "Stack A", which stores every input.
+- [x] [`init_stack`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/init_stack.c) - Initializes a linked list named "Stack A", which stores every input.
+- [x] [`init_index`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/lists/init_index.c) - Assigns an accending index to every nodes of "Stack A".
 
 ## 3. Moves
 
@@ -65,10 +64,16 @@ Run `make re` to recompile everything.
 
 ## 4. Sorting
 - [x] [`sorter`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sorter.c) - Parses how many numbers to sort, using the fitting algorithm.
-- [x] [`sorted`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sorted.c) - Checks if the Stack A is sorted.
-- [x] [`sort_two`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sort_two.c) - Sorts two numbers: `1 move`
-- [x] [`sort_three`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sort_three.c) - Sorts three numbers: `1~2 moves`
-- [x] [`sort_five`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sort_five.c) - Sorts four/five numbers: `4~9 moves`
+- [x] [`issorted`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/issorted.c) - Boolean that checks if the Stack A is sorted.
+- [x] [`simple_sort`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/simple_sort.c) - Sorts between 3 to 5 numbers:
+- 3 numbers: `1~2 moves`
+- 4 numbers: `3~5 moves`
+- 5 numbers: `5~10 moves`
+- [x] [`radix_sort`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/radix_sort.c) - Sorts any amount of numbers:
+- 10 numbers: `63 moves`
+- 100 numbers: `1081 moves`
+- 500 numbers: `6778 moves`
+- 1 000 numbers: `15062 moves`
 
 ## X. Utils
 - [x] [`ft_countwords`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_countwords.c) - Counts the number of words in a string.
