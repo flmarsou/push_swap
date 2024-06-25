@@ -80,7 +80,6 @@ all:		${EXE}
 ${EXE}:		${OBJECTS}
 		@${CC} ${CFLAGS} ${OBJECTS} -o ${EXE}
 		@echo "\n\n${GREEN}[✓] - ${_GREEN}Push Swap${GREEN} Successfully Compiled!${RESET}"
-		@${RM} ${OBJECTS}
 
 %.o:		%.c
 		@${eval FILE_COUNT = ${shell expr ${FILE_COUNT} + 1}}
