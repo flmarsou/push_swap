@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb.c                                               :+:      :+:    :+:   */
+/*   sorted.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 16:14:18 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/21 14:36:12 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/20 08:47:58 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/24 08:42:42 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	rb(t_list **stack_b)
+bool	issorted(t_list *stack_a)
 {
-	t_list	*last;
-
-	last = ft_lstlast(*stack_b);
-	last->next = *stack_b;
-	*stack_b = (*stack_b)->next;
-	last->next->next = NULL;
-	write(1, "rb\n", 3);
+	while (stack_a->next)
+	{
+		if (stack_a->value > stack_a->next->value)
+			return (false);
+		stack_a = stack_a->next;
+	}
+	return (true);
 }

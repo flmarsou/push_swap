@@ -14,7 +14,7 @@
 EXE = push_swap
 
 # Files
-SRC =			./src/push_swap.c \
+SRC =			./src/main.c \
 
 SRC_PARSING =	./src/parsing/parser.c \
 				./src/parsing/isnumber.c \
@@ -30,7 +30,7 @@ SRC_UTILS =		./src/utils/ft_countwords.c \
 				./src/utils/ft_lstsize.c \
 				./src/utils/ft_lstfree.c \
 
-SRC_LISTS =		./src/lists/init_list.c \
+SRC_LISTS =		./src/lists/init_stack.c \
 				./src/lists/init_index.c \
 
 SRC_MOVES =		./src/lists/moves/pa.c \
@@ -46,7 +46,7 @@ SRC_MOVES =		./src/lists/moves/pa.c \
 				./src/lists/moves/ss.c \
 
 SRC_SORTING =	./src/sorting/sorter.c \
-				./src/sorting/sorted.c \
+				./src/sorting/issorted.c \
 				./src/sorting/simple_sort.c \
 				./src/sorting/radix_sort.c \
 
@@ -69,7 +69,7 @@ GREEN		= \e[0;1;32m
 _GREEN		= \e[1;4;32m
 
 FILE_COUNT	= 0
-FILE_TOTAL	= 331
+FILE_TOTAL	= 30
 BAR_SIZE	= ${shell expr 100 \* ${FILE_COUNT} / ${FILE_TOTAL}}
 BAR_LOAD	= ${shell expr 23 \* ${FILE_COUNT} / ${FILE_TOTAL}}
 BAR_REST	= ${shell expr 23 - ${BAR_LOAD}}

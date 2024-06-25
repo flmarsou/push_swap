@@ -53,8 +53,7 @@ void		ft_lstfree(t_list *stack);
 //             Lists             //
 //===============================//
 
-t_list		*init_list(int argc, const char **argv);
-
+t_list		*init_stack(int argc, const char **argv);
 void		init_index(t_list *stack_a);
 
 //===============================//
@@ -71,7 +70,7 @@ void		pa(t_list **stack_a, t_list **stack_b);
  * Push the first element at the top of Stack B, 
  * and put it at the top of Stack A.
 */
-void		pb(t_list **stack_a, t_list **stack_b);
+void		pb(t_list **stack_b, t_list **stack_a);
 
 /**
  * Shift up all elements of Stack A by 1 (first becomes last).
@@ -129,15 +128,9 @@ void		ss(t_list **stack_a, t_list **stack_b);
 //===============================//
 
 void		sorter(t_list **stack_a, t_list **stack_b);
-void		sorted(t_list *stack_a);
+bool		issorted(t_list *stack_a);
 
-/**
- * Little and manual sorting algorithm, sorting between 3 to 5 numbers.
- * - 3 numbers: `1~2 moves`
- * - 4 numbers: `3~5 moves`
- * - 5 numbers: `5~10 moves`
-*/
 void		simple_sort(t_list **stack_a, t_list **stack_b, int size);
-void		radix_sort(t_list **stack_a, t_list **stack_b);
+void		radix_sort(t_list **stack_a, t_list **stack_b, int size);
 
 #endif

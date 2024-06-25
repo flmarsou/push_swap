@@ -17,8 +17,6 @@ static void	rra_(t_list **stack_a)
 	t_list	*current;
 	t_list	*last;
 
-	if (!stack_a || !*stack_a || !(*stack_a)->next)
-		return ;
 	current = *stack_a;
 	while (current->next->next)
 		current = current->next;
@@ -33,8 +31,6 @@ static void	rrb_(t_list **stack_b)
 	t_list	*current;
 	t_list	*last;
 
-	if (!stack_b || !*stack_b || !(*stack_b)->next)
-		return ;
 	current = *stack_b;
 	while (current->next->next)
 		current = current->next;

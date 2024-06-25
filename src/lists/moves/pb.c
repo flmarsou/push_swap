@@ -19,8 +19,8 @@ void	pb(t_list **stack_b, t_list **stack_a)
 	if (ft_lstsize(*stack_a) < 1)
 		return ;
 	temp = *stack_a;
-	*stack_a = (*stack_a)-> next;
-	temp -> next = *stack_b;
+	*stack_a = (*stack_a)->next;
+	temp->next = *stack_b;
 	*stack_b = temp;
 	write(1, "pb\n", 3);
 }

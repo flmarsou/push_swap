@@ -17,8 +17,6 @@ void	rrb(t_list **stack_b)
 	t_list	*current;
 	t_list	*last;
 
-	if (!stack_b || !*stack_b || !(*stack_b)->next)
-		return ;
 	current = *stack_b;
 	while (current->next->next)
 		current = current->next;

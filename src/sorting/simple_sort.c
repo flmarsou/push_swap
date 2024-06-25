@@ -64,17 +64,6 @@ static void	min_to_stack_b(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-static bool	is_sorted(t_list *stack_a)
-{
-	while (stack_a->next)
-	{
-		if (stack_a->value > stack_a->next->value)
-			return (false);
-		stack_a = stack_a->next;
-	}
-	return (true);
-}
-
 static void	sort_three(t_list **stack_a)
 {
 	int	first;
@@ -109,7 +98,7 @@ void	simple_sort(t_list **stack_a, t_list **stack_b, int size)
 	else if (size == 4)
 	{
 		min_to_stack_b(stack_a, stack_b);
-		if (!is_sorted(*stack_a))
+		if (!issorted(*stack_a))
 			sort_three(stack_a);
 		pa(stack_a, stack_b);
 	}
@@ -117,7 +106,7 @@ void	simple_sort(t_list **stack_a, t_list **stack_b, int size)
 	{
 		min_to_stack_b(stack_a, stack_b);
 		min_to_stack_b(stack_a, stack_b);
-		if (!is_sorted(*stack_a))
+		if (!issorted(*stack_a))
 			sort_three(stack_a);
 		pa(stack_a, stack_b);
 		pa(stack_a, stack_b);

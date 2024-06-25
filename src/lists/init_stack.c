@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb.c                                               :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmarsou <flmarsou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 16:14:18 by flmarsou          #+#    #+#             */
-/*   Updated: 2024/06/21 14:36:12 by flmarsou         ###   ########.fr       */
+/*   Created: 2024/06/11 13:43:39 by flmarsou          #+#    #+#             */
+/*   Updated: 2024/06/18 15:44:51 by flmarsou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	rb(t_list **stack_b)
+t_list	*init_stack(int argc, const char **argv)
 {
-	t_list	*last;
+	t_list	*head;
+	t_list	*current;
+	int		i;
 
-	last = ft_lstlast(*stack_b);
-	last->next = *stack_b;
-	*stack_b = (*stack_b)->next;
-	last->next->next = NULL;
-	write(1, "rb\n", 3);
+	i = 0;
+	head = ft_lstnew(ft_atoi(argv[i++]));
+	current = head;
+	while (i < argc)
+	{
+		current->next = ft_lstnew(ft_atoi(argv[i]));
+		current = current->next;
+		i++;
+	}
+	return (head);
 }

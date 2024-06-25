@@ -17,7 +17,8 @@ void	sorter(t_list **stack_a, t_list **stack_b)
 	int	size;
 
 	size = ft_lstsize(*stack_a);
-	sorted(*stack_a);
+	if (issorted(*stack_a))
+		return ;
 	if (size == 2)
 		sa(stack_a);
 	else if (size <= 5)
@@ -25,7 +26,6 @@ void	sorter(t_list **stack_a, t_list **stack_b)
 	else
 	{
 		init_index(*stack_a);
-		radix_sort(stack_a, stack_b);
+		radix_sort(stack_a, stack_b, size);
 	}
-	sorted(*stack_a);
 }

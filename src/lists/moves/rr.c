@@ -16,8 +16,6 @@ static void	ra_(t_list **stack_a)
 {
 	t_list	*last;
 
-	if (!stack_a || !*stack_a || !(*stack_a)->next)
-		return ;
 	last = ft_lstlast(*stack_a);
 	last->next = *stack_a;
 	*stack_a = (*stack_a)->next;
@@ -28,8 +26,6 @@ static void	rb_(t_list **stack_b)
 {
 	t_list	*last;
 
-	if (!stack_b || !*stack_b || !(*stack_b)->next)
-		return ;
 	last = ft_lstlast(*stack_b);
 	last->next = *stack_b;
 	*stack_b = (*stack_b)->next;

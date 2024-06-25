@@ -41,10 +41,7 @@ void	parser(int argc, const char **argv)
 		i++;
 	}
 	if (argc == 1)
-	{
-		write(1, "\e[1;32mOK\n", 10);
 		exit(0);
-	}
 	if (!isduplicate(argv))
 		error_message(4);
 }
