@@ -47,9 +47,7 @@ SRC_MOVES =		./src/lists/moves/pa.c \
 
 SRC_SORTING =	./src/sorting/sorter.c \
 				./src/sorting/sorted.c \
-				./src/sorting/sort_two.c \
-				./src/sorting/sort_three.c \
-				./src/sorting/sort_five.c \
+				./src/sorting/sort_little.c \
 
 SOURCES =		${SRC} ${SRC_PARSING} ${SRC_UTILS} ${SRC_LISTS} ${SRC_MOVES} ${SRC_SORTING}
 OBJECTS =		${SOURCES:.c=.o}

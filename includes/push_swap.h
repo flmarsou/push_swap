@@ -200,18 +200,8 @@ void		sorter(t_list **stack_a, t_list **stack_b);
 void		sorted(t_list *stack_a);
 
 /**
- * Sort two numbers: `1 move`
-*/
-void		sort_two(t_list *stack_a);
-
-/**
- * Sort three numbers: `1~2 moves`
-*/
-void		sort_three(t_list **stack_a);
-
-/**
  * Sort four or five numbers: ``
 */
-void		sort_five(t_list **stack_a, t_list **stack_b);
+void		sort_little(t_list **stack_a, t_list **stack_b, int size);
 
 #endif

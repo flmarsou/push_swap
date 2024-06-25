@@ -14,19 +14,13 @@
 
 void	sorter(t_list **stack_a, t_list **stack_b)
 {
-	unsigned int	size;
+	int	size;
 
 	size = ft_lstsize(*stack_a);
 	sorted(*stack_a);
 	if (size == 2)
-		sort_two(*stack_a);
-	else if (size == 3)
-		sort_three(stack_a);
-	else if (size == 4 || size == 5)
-		sort_five(stack_a, stack_b);
-	else
-	{
-		init_sort(*stack_a);
-	}
+		sa(*stack_a);
+	else if (size <= 5)
+		sort_little(stack_a, stack_b, size);
 	sorted(*stack_a);
 }

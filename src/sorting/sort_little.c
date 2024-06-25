@@ -12,47 +12,52 @@
 
 #include "../../includes/push_swap.h"
 
-static int	min_value(t_list *stack_a)
+static int	min_value(t_list **stack_a)
 {
-	int		temp;
+	t_list	*i;
+	t_list	*j;
 	int		index;
 
-	temp = stack_a->value;
+	i = *stack_a;
+	j = *stack_a;
 	index = 1;
-	while (stack_a)
+	while (i)
 	{
-		if (stack_a->value < temp)
+		while (i->value <= j->value)
 		{
-			temp = stack_a->value;
-			index++;
+			if (!j->next)
+				return (index);
+			j = j->next;
 		}
-		stack_a = stack_a->next;
+		i = i->next;
+		j = i;
+		index++;
 	}
 	return (index);
 }
 
 static void	min_to_stack_b(t_list **stack_a, t_list **stack_b)
 {
-	if (min_value(*stack_a) == 1)
+	if (min_value(stack_a) == 1)
 		pb(stack_b, stack_a);
-	else if (min_value(*stack_a) == 2)
+	else if (min_value(stack_a) == 2)
 	{
 		sa(*stack_a);
 		pb(stack_b, stack_a);
 	}
-	else if (min_value(*stack_a) == 3)
+	else if (min_value(stack_a) == 3)
 	{
 		ra(stack_a);
 		ra(stack_a);
 		pb(stack_b, stack_a);
 	}
-	else if (min_value(*stack_a) == (ft_lstsize(*stack_a) - 1))
+	else if (min_value(stack_a) == (ft_lstsize(*stack_a) - 1))
 	{
 		rra(stack_a);
 		rra(stack_a);
 		pb(stack_b, stack_a);
 	}
-	else if (min_value(*stack_a) == ft_lstsize(*stack_a))
+	else if (min_value(stack_a) == ft_lstsize(*stack_a))
 	{
 		rra(stack_a);
 		pb(stack_b, stack_a);
@@ -70,16 +75,45 @@ static bool	is_sorted(t_list *stack_a)
 	return (true);
 }
 
-void	sort_five(t_list **stack_a, t_list **stack_b)
+static void	sort_three(t_list **stack_a)
 {
-	if (ft_lstsize(*stack_a) == 4)
+	int	first;
+	int	middle;
+	int	last;
+
+	first = (*stack_a)->value;
+	middle = (*stack_a)->next->value;
+	last = (*stack_a)->next->next->value;
+	if (first < middle && middle > last && last > first)
+	{
+		rra(stack_a);
+		sa(*stack_a);
+	}
+	else if (first > middle && middle < last && last > first)
+		sa(*stack_a);
+	else if (first < middle && middle > last && last < first)
+		rra(stack_a);
+	else if (first > middle && middle < last && last < first)
+		ra(stack_a);
+	else
+	{
+		ra(stack_a);
+		sa(*stack_a);
+	}
+}
+
+void	sort_little(t_list **stack_a, t_list **stack_b, int size)
+{
+	if (size == 3)
+		sort_three(stack_a);
+	else if (size == 4)
 	{
 		min_to_stack_b(stack_a, stack_b);
 		if (!is_sorted(*stack_a))
 			sort_three(stack_a);
 		pa(stack_a, stack_b);
 	}
-	else
+	else if (size == 5)
 	{
 		min_to_stack_b(stack_a, stack_b);
 		min_to_stack_b(stack_a, stack_b);
