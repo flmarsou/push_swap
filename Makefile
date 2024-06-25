@@ -31,7 +31,7 @@ SRC_UTILS =		./src/utils/ft_countwords.c \
 				./src/utils/ft_lstfree.c \
 
 SRC_LISTS =		./src/lists/init_list.c \
-				./src/lists/init_sort.c \
+				./src/lists/init_index.c \
 
 SRC_MOVES =		./src/lists/moves/pa.c \
 				./src/lists/moves/pb.c \
@@ -47,7 +47,8 @@ SRC_MOVES =		./src/lists/moves/pa.c \
 
 SRC_SORTING =	./src/sorting/sorter.c \
 				./src/sorting/sorted.c \
-				./src/sorting/sort_little.c \
+				./src/sorting/simple_sort.c \
+				./src/sorting/radix_sort.c \
 
 SOURCES =		${SRC} ${SRC_PARSING} ${SRC_UTILS} ${SRC_LISTS} ${SRC_MOVES} ${SRC_SORTING}
 OBJECTS =		${SOURCES:.c=.o}
@@ -68,7 +69,7 @@ GREEN		= \e[0;1;32m
 _GREEN		= \e[1;4;32m
 
 FILE_COUNT	= 0
-FILE_TOTAL	= 30
+FILE_TOTAL	= 331
 BAR_SIZE	= ${shell expr 100 \* ${FILE_COUNT} / ${FILE_TOTAL}}
 BAR_LOAD	= ${shell expr 23 \* ${FILE_COUNT} / ${FILE_TOTAL}}
 BAR_REST	= ${shell expr 23 - ${BAR_LOAD}}
