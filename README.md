@@ -1,6 +1,11 @@
 # 🦊 What is Push Swap?
 
-WIP
+A sorting algorithm program that sorts a random amount of numbers with the least moves possible, using two different stacks (A and B).
+- Stack A: Stores every `value` and `index` given.
+- Stack B: Empty, used for moves only.
+
+I decided to go with **Radix** for its *simplicity/efficiency* ratio. Since we use **bit shifting** with Radix, I assigned to each and every **value** an accending **index** starting at 0 to the lowest value, increasing all the way to the highest.
+That way, even a big numbers will in reality have a small index, allowing the algorithm to run with a lesser amount of moves.
 
 # ⚒️ Compilation
 
