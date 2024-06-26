@@ -19,9 +19,13 @@ Run `make re` to recompile everything.
 - Can't have duplicates.
 - Needs to be between -2147483648 and 2147483647.
 
-### Examples:
+### Commands:
 - ./push_swap "69 42 777 420 23"
 - ./push_swap 69 42 777 420 23
+<br />
+
+- ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l `display the amount of moves`
+- ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_linux $ARG `display if sorted`
 
 # 🧼 Cleaning
 
