@@ -93,7 +93,7 @@ clean:
 		@${RM} ${OBJECTS}
 		@echo "${WHITE}[!] - ${_WHITE}Push Swap${WHITE} Successfully Cleaned!${RESET}"
 
-fclean: clean
+fclean:		clean
 		@${RM} ${OBJECTS} ${EXE}
 re:			fclean all
 
