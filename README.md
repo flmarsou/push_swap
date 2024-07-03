@@ -79,10 +79,10 @@ Run `make re` to recompile everything.
 - 4 numbers: `3~5 moves`
 - 5 numbers: `5~10 moves`
 - [x] [`radix_sort`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/radix_sort.c) - Sorts any amount of numbers:
-- 10 numbers: `63 moves`
-- 100 numbers: `1081 moves`
-- 500 numbers: `6778 moves`
-- 1 000 numbers: `15062 moves`
+- 10 numbers: `~60 moves`
+- 100 numbers: `~1000-1100 moves`
+- 500 numbers: `~6700-6800 moves`
+- 1 000 numbers: `~15000 moves`
 
 ## X. Utils
 - [x] [`ft_countwords`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/utils/ft_countwords.c) - Counts the number of words in a string.
