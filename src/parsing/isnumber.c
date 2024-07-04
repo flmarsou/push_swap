@@ -24,9 +24,11 @@ bool	isnumber(const char *str)
 	unsigned int	i;
 
 	i = 0;
-	if (str[i] == '-' || str[i] == '0')
+	if (str[0] == '-' && str[1] != '\0')
 		i++;
-	if (str[i] == '0')
+	if (str[0] == '-' && str[1] == '0')
+		return (false);
+	if (str[0] == '0' && ft_isdigit(str[1]))
 		return (false);
 	while (str[i])
 	{
