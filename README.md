@@ -1,17 +1,21 @@
 # 🦊 What is Push Swap?
 
-A sorting algorithm program that sorts a random amount of numbers with the least moves possible, using two different stacks (A and B).
-- Stack A: Stores every `value` and `index` given.
-- Stack B: Empty, used for moves only.
+A sorting algorithm program that sorts a random amount of integers with a handful of different possible moves, using two different stacks (A and B).
 
-I decided to go with **Radix** for its *simplicity/efficiency* ratio. Since we use **bit shifting** with Radix, I assigned to each and every **value** an accending **index** starting at 0 to the lowest value, increasing all the way to the highest.
-That way, even a big numbers will in reality have a small index, allowing the algorithm to run with a lesser amount of moves.
+### Overview:
+- **Parsing:** The first step is to check the provided arguments to ensure they are integers. This is crucial to avoid any erroneous inputs.
+- **Storing:** Each integer is converted into a **node structure**, ready for manipulation and sorting.
+- **Sorting:** Depending on the amount of integers to sort, different algorithm functions are called (**Simple Sort** or **Radix Sort**).
+
+### Radix Sort:
+- **Indexing:** To utilize the Radix Sort, each integers is assigned an **ascending index** starting from 0 for the lowest value, increasing incrementally to the highest value. This indexing **transforms potentially large numbers into smaller**, manageable indices.
+- **Bit Shifting:** Radix Sort utilizes **bit shifting** to separate indexes into two groups (0 and 1) for each bit position. This process is repeated until all indexes have been sorted.
 
 # ⚒️ Compilation
 
 1. Run `make` to compile the program.
-Run `make re` to recompile everything.
-2. Run `./push_swap <args>` to execute the program.
+2. Run `make re` to recompile everything.
+3. Run `./push_swap <args>` to execute the program.
 
 ### Rules for `<args>`:
 - Needs more than one argument.
@@ -20,12 +24,18 @@ Run `make re` to recompile everything.
 - Needs to be between -2147483648 and 2147483647.
 
 ### Commands:
-- ./push_swap "69 42 777 420 23"
-- ./push_swap 69 42 777 420 23
-<br />
-
-- ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l `display the amount of moves`
-- ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_linux $ARG `display if sorted`
+```sh
+./push_swap "69 42 777 420 23"
+```
+```sh
+./push_swap 69 42 777 420 23
+```
+```sh
+ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l‎
+```
+```sh
+ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_linux $ARG
+```
 
 # 🧼 Cleaning
 
@@ -40,14 +50,16 @@ Run `make re` to recompile everything.
 | Turn in files | Makefile, *.h, *.c |
 | Makefile | NAME, all, clean, fclean, re |
 | External functs. | read, write, malloc, free, exit, [`ft_printf`](https://github.com/flmarsou/2.1-ft_printf) |
-| Libft authorized | Yes |
+| [Libft](https://github.com/flmarsou/1-Libft) authorized | Yes |
 | Description | Write a program that sorts a pile of numbers |
 
 # 📑 List of Functions
 
+- [x] [`main`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/main.c) - Calls and sends info to the [parser](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/parser.c) and [sorter](https://github.com/flmarsou/3.1-push_swap/blob/main/src/sorting/sorter.c).
+
 ## 1. Parsing
 
-- [x] [`parser`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/parser.c) - Goes through all the arguments to see if everything can be processed further. Displays an error message and exits the program otherwise.
+- [x] [`parser`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/parser.c) - Goes through all the arguments to see if everything can be processed further.
 - [x] [`isnumber`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/isnumber.c) - Boolean that checks if args only has correct numbers.
 - [x] [`isoverflow`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/isoverflow.c) - Boolean that checks for any overflow.
 - [x] [`isduplicate`](https://github.com/flmarsou/3.1-push_swap/blob/main/src/parsing/isduplicate.c) - Boolean that checks if any arg appears twice.
