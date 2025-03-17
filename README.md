@@ -42,16 +42,7 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_linux $ARG
 1. Run `make clean` to remove every object files.
 2. Run `make fclean` to remove every object files, including the executable.
 
-# ✨ Summary
-
-|     |     |
-| --- | --- |
-| Program name | push_swap |
-| Turn in files | Makefile, *.h, *.c |
-| Makefile | NAME, all, clean, fclean, re |
-| External functs. | read, write, malloc, free, exit, [`ft_printf`](https://github.com/flmarsou/ft_printf) |
-| [Libft](https://github.com/flmarsou/libft) authorized | Yes |
-| Description | Write a program that sorts a pile of numbers |
+---
 
 # 📑 List of Functions
 
